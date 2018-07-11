@@ -1,0 +1,39 @@
+# To import pandas in python
+import pandas as pd
+# Here pd is a short keyword to pandas. You can use any word!
+# To import a csv file, set your file path correctly with double backslash while using Visual Studio IDE
+df = pd.read_csv("C:\\Users\\NITHIN\\Desktop\\My Stuff\\VISUAL STUDIO PYTHON\\weather.csv")
+
+# To print particular column from the csv file
+print(type(df['weather']))
+
+# To find the max value
+print(df['degree'].max())
+
+# To calculate mean, median, standard deviation,etc
+print(df.describe())
+
+# To provide a condition
+print(df.degree<=30)
+
+# To print the complete table
+print(df)
+
+# To pick a specific data to know
+print(df[['day','degree']][df.degree==df['degree']].max())
+
+# To change index of the table
+print(df.set_index('day',inplace=True))
+print(df)
+
+# To reset the index to default
+print(df.reset_index(inplace=True))
+print(df)
+
+# To fill na to the specific cells, here "new_df" is a new dataframe
+print("*****   To fill NaN with custom word   *****")
+new_df = df.fillna(
+    {
+        'raingaugereading':'UnAvailable'
+        })
+print(new_df)
