@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+x = df['Open'].head()
+y = df['Close'].head()
+xticks = df['Date']
+yticks = np.arange(600,700,1,dtype=int)
+df = pd.read_csv("C://Users//NITHIN//Downloads/GOOG-NASDAQ_GOOGL.csv")
+plt.plot(x, label='Open')
+plt.plot(y, label='Close')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.yticks(y, yticks)
+plt.title('Interesting Graph\nCheck it out')
+plt.legend()
+plt.show()
